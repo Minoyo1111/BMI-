@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>為你自己測BMI</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .wrap{
+      width: 1200px;
+      height: 600px;
+      text-align: center;
+      background-image:url("https://picsum.photos/1300/700/?random=1");
+      padding: 100px 100px;
+    }
+
+    .item{
+      width: 100%;
+      margin: 10px 0;
+
+    }
+    h1{
+      color: #111bb2;
+    }
+
+    .item input:last-child{
+      width: 70px;
+      height: 30px;
+      border-radius:50px;
+      border: 10px;
+      font-size: 5px;
+    }
+
+    .item input:last-child:hover{
+      background-color: blue;
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <h1>BMI 計算機</h1>
+    </div>
+    
+    <%= form_tag '/bmi/result' do %>
+    <div class="item">
+      身高 : <%= text_field_tag 'body_height' %> 公分 <br />
+    </div>
+     <div class="item">
+      體重 : <%= text_field_tag 'body_weight' %> 公斤 <br />
+     </div>
+     <div class="item">
+      <%= submit_tag "開始計算" %>
+     </div>
+    <% end %>
+
+  </div>
+  
+  
+</body>
+</html>
